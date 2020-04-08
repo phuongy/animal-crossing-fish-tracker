@@ -1,10 +1,6 @@
 import * as React from "react"
-import { Fish } from "./fish"
+import { Fish } from "../components/fish"
 
-const Page = () => (
-  <div>
-    <Fish />
-  </div>
-)
+const Page = () => <Fish />
 
 export default Page
