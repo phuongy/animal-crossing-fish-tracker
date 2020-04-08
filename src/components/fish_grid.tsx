@@ -24,7 +24,7 @@ export const FishGrid = ({
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr",
+        gridTemplateColumns: "1fr 1fr",
         gridColumnGap: "8px",
         gridRowGap: "8px",
         width: "100%",
