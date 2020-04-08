@@ -16,7 +16,10 @@ export const FishGrid = ({
     .filter(isFishActiveNow)
     .sort((a, b) => (a.name > b.name ? 1 : -1))
 
-  const allFishBy = data.sort((a, b) => (a.name > b.name ? 1 : -1))
+  const inActiveFish = data
+    .filter(fish => !isFishActiveNow(fish))
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+
   return (
     <div
       style={{
@@ -33,12 +36,12 @@ export const FishGrid = ({
             <Card key={index} {...fish} />
           ))}
           {showAll &&
-            allFishBy.map((fish, index) => (
+            inActiveFish.map((fish, index) => (
               <Card key={index} {...fish} isInactive />
             ))}
         </React.Fragment>
       ) : (
-        allFishBy.map((fish, index) => (
+        inActiveFish.map((fish, index) => (
           <Card key={index} {...fish} isInactive />
         ))
       )}

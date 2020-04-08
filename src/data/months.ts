@@ -1,17 +1,17 @@
 const months = {
   en: [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ],
   zh: [
     "一月",
@@ -31,8 +31,6 @@ const months = {
 
 export const getMonths = (locale: string) => months[locale]
 
-export const isFishAvailableNow = fish => {
-  const currentTime = new Date()
-  const currentMonth = currentTime.getMonth()
-  return fish.availability[currentMonth]
+export const isFishAvailable = (month: number) => fish => {
+  return fish.availability[month]
 }

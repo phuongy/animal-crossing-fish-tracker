@@ -591,7 +591,7 @@ export const getData = (locale: string): FishProps[] => {
       name: getFishName("char"),
       image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/15/NH-Icon-char.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
       value: 3800,
-      location: "river_clifftop_pond",
+      location: "pond_clifftop",
       size: 3,
       time: ["16-9"],
       availability: [false, false, true, true, true, false, false, false, true, true, true, true]

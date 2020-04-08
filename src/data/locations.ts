@@ -1,10 +1,10 @@
 export type Location =
   | "sea"
   | "pond"
+  | "pond_clifftop"
   | "river"
   | "river_mouth"
   | "river_clifftop"
-  | "river_clifftop_pond"
   | "pier"
 
 const locations: { [location: string]: { [locale: string]: string } } = {
@@ -28,9 +28,9 @@ const locations: { [location: string]: { [locale: string]: string } } = {
     en: "River (Clifftop)",
     zh: "River (Clifftop)",
   },
-  river_clifftop_pond: {
-    en: "River (Clifftop) Pond",
-    zh: "River (Clifftop) Pond",
+  pond_clifftop: {
+    en: "Pond (Clifftop)",
+    zh: "Pond (Clifftop)",
   },
   pier: {
     en: "Pier",
@@ -44,9 +44,9 @@ export const getLocationName = (locale: string) => (location: string) =>
 export const locationOrdering = [
   "sea",
   "pond",
+  "pond_clifftop",
   "river",
   "river_mouth",
   "river_clifftop",
-  "river_clifftop_pond",
   "pier",
 ]
