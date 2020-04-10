@@ -21,7 +21,7 @@ type FishFiltersProps = {
 const orange = "#e18850"
 const yellow = "#eee080"
 const green = "#e9f5eb"
-const highlight = yellow
+const highlight = orange
 const text = "#6e661b"
 
 const SummaryFilter = ({
@@ -71,6 +71,15 @@ const LocationsFilter = ({
   currentLocation,
   getLocation,
 }: Partial<FishFiltersProps>) => {
+  const buttonStyles: React.CSSProperties = {
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    flex: "0 1 16.66%",
+    fontSize: "16px",
+    padding: "6px 4px",
+    textAlign: "center",
+  }
+
   return (
     <div>
       <h2
@@ -92,13 +101,9 @@ const LocationsFilter = ({
       >
         <button
           style={{
+            ...buttonStyles,
             background: currentLocation === "all" ? highlight : "#fff",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            flex: "0 1 16.66%",
-            fontSize: "16px",
-            padding: "6px 4px",
-            textAlign: "center",
+            color: currentLocation === "all" ? "#fff" : "#000",
           }}
           onClick={onLocationChange("all")}
         >
@@ -108,14 +113,9 @@ const LocationsFilter = ({
           <button
             key={index}
             style={{
+              ...buttonStyles,
               background: currentLocation === location ? highlight : "#fff",
-              border: "1px solid #ccc",
-              borderRadius: "8px",
-              flex: "0 1 16.66%",
-              fontSize: "16px",
-              minHeight: "60p",
-              padding: "6px 4px",
-              textAlign: "center",
+              color: currentLocation === location ? "#fff" : "#000",
             }}
             onClick={onLocationChange(location)}
           >
@@ -133,6 +133,15 @@ const MonthFilter = ({
   currentMonth,
   onMonthChange,
 }: Partial<FishFiltersProps>) => {
+  const buttonStyles: React.CSSProperties = {
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    flex: "0 1 16.66%",
+    fontSize: "16px",
+    padding: "6px 4px",
+    textAlign: "center",
+  }
+
   return (
     <div>
       <h2
@@ -156,13 +165,10 @@ const MonthFilter = ({
           <button
             key={index}
             style={{
+              ...buttonStyles,
               background: currentMonth === index ? highlight : "#fff",
-              border: "1px solid #ccc",
-              borderRadius: "8px",
+              color: currentMonth === index ? "#fff" : "#000",
               flex: "0 1 16.66%",
-              fontSize: "16px",
-              padding: "6px 4px",
-              textAlign: "center",
             }}
             onClick={onMonthChange(index)}
           >
@@ -179,6 +185,15 @@ const ShowAllFilter = ({
   showAll,
   onShowAllChange,
 }: Partial<FishFiltersProps>) => {
+  const buttonStyles: React.CSSProperties = {
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    flex: "0 1 16.66%",
+    fontSize: "16px",
+    marginRight: "4px",
+    padding: "6px 18px",
+    textAlign: "center",
+  }
   return (
     <div>
       <h2
@@ -192,14 +207,9 @@ const ShowAllFilter = ({
       </h2>
       <button
         style={{
+          ...buttonStyles,
           background: showAll === true ? highlight : "#fff",
-          border: "1px solid #ccc",
-          borderRadius: "8px",
-          flex: "0 1 16.66%",
-          fontSize: "16px",
-          marginRight: "4px",
-          padding: "6px 18px",
-          textAlign: "center",
+          color: showAll === true ? "#fff" : "#000",
         }}
         onClick={onShowAllChange(true)}
       >
@@ -207,13 +217,9 @@ const ShowAllFilter = ({
       </button>
       <button
         style={{
+          ...buttonStyles,
           background: showAll === false ? highlight : "#fff",
-          border: "1px solid #ccc",
-          borderRadius: "8px",
-          flex: "0 1 16.66%",
-          fontSize: "16px",
-          padding: "6px 18px",
-          textAlign: "center",
+          color: showAll === false ? "#fff" : "#000",
         }}
         onClick={onShowAllChange(false)}
       >
@@ -238,7 +244,7 @@ export const FishFilters = ({
   getLocation,
   onShowAllChange,
 }: FishFiltersProps) => {
-  const containerStyles = {
+  const containerStyles: React.CSSProperties = {
     background: "#F4E2AE",
     padding: showFilters ? "4px 12px 24px" : "4px 12px 0",
     overflow: "hidden",

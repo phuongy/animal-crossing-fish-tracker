@@ -64,7 +64,6 @@ export const Fish = () => {
       <h1
         style={{
           background: "#fff",
-          // borderRadius: "24px 24px 0 0",
           color: "#6e661b",
           fontFamily: "'Delius', cursive",
           fontSize: "24px",
@@ -84,6 +83,8 @@ export const Fish = () => {
       <div
         style={{
           flex: "0 0 auto",
+          borderRadius: "0 0 180px / 60px",
+          overflow: "hidden",
         }}
       >
         <FishFilters
@@ -109,7 +110,8 @@ export const Fish = () => {
         style={{
           backgroundImage: "linear-gradient(to bottom, #61AAEE, #3E78B5)",
           flex: "1",
-          padding: "6px 12px 24px",
+          marginTop: "-80px",
+          padding: "86px 12px 24px",
         }}
       >
         {(currentLocation === "all"
