@@ -1,8 +1,14 @@
 import * as React from "react"
 import { FishGrid } from "../components/fish_grid"
 import { getData, FishProps } from "../data/fish"
-import { getMonths, isFishAvailable } from "../data/months"
+import {
+  getMonthsShortName,
+  getMonthsLongName,
+  isFishAvailable,
+} from "../data/months"
+import { getShowAllLabels } from "../data/showAll"
 import { locationOrdering, getLocationName } from "../data/locations"
+import { FishFilters } from "./fish_filters"
 
 const currentTime = new Date()
 const locationsOrdering = locationOrdering
@@ -11,6 +17,7 @@ export const Fish = () => {
   const [currentMonth, setCurrentMonth] = React.useState(currentTime.getMonth())
   const [currentLocation, setCurrentLocation] = React.useState("all")
   const [showAll, setShowAll] = React.useState(false)
+  const [showFilters, setFiltersVisible] = React.useState(true)
   const [locale, setLocale] = React.useState("en")
 
   React.useEffect(() => {
@@ -19,7 +26,9 @@ export const Fish = () => {
     }
   })
 
-  const months = getMonths(locale)
+  const monthsShortName = getMonthsShortName(locale)
+  const monthsLongName = getMonthsLongName(locale)
+  const showAllLabels = getShowAllLabels(locale)
   const data = getData(locale)
   const getLocation = getLocationName(locale)
 
@@ -43,158 +52,81 @@ export const Fish = () => {
   }
 
   return (
-    <div style={{ padding: "4px" }}>
+    <div
+      style={{
+        background: "#afd3a9",
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        padding: "16px 0 0",
+      }}
+    >
       <h1
         style={{
-          borderBottom: "1px solid #ccc",
-          fontFamily: "helvetica",
-          fontSize: "16px",
-          textTransform: "uppercase",
-          marginBottom: "24px",
-          paddingBottom: "12px",
+          background: "#fff",
+          // borderRadius: "24px 24px 0 0",
+          color: "#6e661b",
+          fontFamily: "'Delius', cursive",
+          fontSize: "24px",
+          fontWeight: 700,
+          margin: "-10px 0 0",
+          padding: "12px 24px 8px",
+          position: "sticky",
+          left: 0,
+          top: 0,
+          width: "calc(100% - 48px)",
+          zIndex: 2,
         }}
       >
-        Fish tracker
+        ACNH :: Fish list
       </h1>
 
-      <div style={{ borderBottom: "1px solid #ccc", paddingBottom: "24px" }}>
-        <h2
-          style={{
-            fontFamily: "helvetica",
-            fontSize: "16px",
-            margin: "12px 0",
+      <div
+        style={{
+          flex: "0 0 auto",
+          position: "sticky",
+          top: "48px",
+          zIndex: 1,
+        }}
+      >
+        <FishFilters
+          {...{
+            locale,
+            showFilters,
+            showAllLabels,
+            monthsShortName,
+            monthsLongName,
+            locationsOrdering,
+            currentLocation,
+            currentMonth,
+            showAll,
+            getLocation,
+            onMonthChange,
+            onLocationChange,
+            onShowAllChange,
           }}
-        >
-          Month
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
-            gridColumnGap: "4px",
-            gridRowGap: "4px",
-          }}
-        >
-          {months.map((month, index) => (
-            <button
-              key={index}
-              style={{
-                background: currentMonth === index ? "#ee8" : "#fff",
-                border: "1px solid #ccc",
-                flex: "0 1 16.66%",
-                fontSize: "16px",
-                padding: "6px 4px",
-                textAlign: "center",
-              }}
-              onClick={onMonthChange(index)}
-            >
-              {month}
-            </button>
-          ))}
-        </div>
-
-        <h2
-          style={{
-            fontFamily: "helvetica",
-            fontSize: "16px",
-            margin: "12px 0",
-          }}
-        >
-          Locations
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr",
-            gridColumnGap: "4px",
-            gridRowGap: "4px",
-          }}
-        >
-          <button
-            style={{
-              background: currentLocation === "all" ? "#ee8" : "#fff",
-              border: "1px solid #ccc",
-              flex: "0 1 16.66%",
-              fontSize: "16px",
-              padding: "6px 4px",
-              textAlign: "center",
-            }}
-            onClick={onLocationChange("all")}
-          >
-            All
-          </button>
-          {locationsOrdering.map((location, index) => (
-            <button
-              key={index}
-              style={{
-                background: currentLocation === location ? "#ee8" : "#fff",
-                border: "1px solid #ccc",
-                flex: "0 1 16.66%",
-                fontSize: "16px",
-                minHeight: "60p",
-                padding: "6px 4px",
-                textAlign: "center",
-              }}
-              onClick={onLocationChange(location)}
-            >
-              {getLocation(location)}
-            </button>
-          ))}
-        </div>
-
-        <h2
-          style={{
-            fontFamily: "helvetica",
-            fontSize: "16px",
-            margin: "12px 0",
-          }}
-        >
-          Show all
-        </h2>
-        <button
-          style={{
-            background: showAll === true ? "#ee8" : "#fff",
-            border: "1px solid #ccc",
-            flex: "0 1 16.66%",
-            fontSize: "16px",
-            marginRight: "4px",
-            padding: "6px 18px",
-            textAlign: "center",
-          }}
-          onClick={onShowAllChange(true)}
-        >
-          Yes
-        </button>
-        <button
-          style={{
-            background: showAll === false ? "#ee8" : "#fff",
-            border: "1px solid #ccc",
-            flex: "0 1 16.66%",
-            fontSize: "16px",
-            padding: "6px 18px",
-            textAlign: "center",
-          }}
-          onClick={onShowAllChange(false)}
-        >
-          No
-        </button>
+        />
       </div>
 
-      {(currentLocation === "all" ? locationsOrdering : [currentLocation]).map(
-        (location, index) => {
+      <div
+        style={{
+          backgroundImage: "linear-gradient(to bottom, #61AAEE, #3E78B5)",
+          flex: "1",
+          padding: "6px 12px 24px",
+        }}
+      >
+        {(currentLocation === "all"
+          ? locationsOrdering
+          : [currentLocation]
+        ).map((location, index) => {
           return (
             <div key={index} style={{ margin: "0 0 12px" }}>
               <h3
                 style={{
-                  background: "#fff",
                   fontFamily: "helvetica",
                   fontSize: "16px",
-                  margin: "12px 0 12px",
-                  position: "sticky",
-                  padding: "12px 0",
-                  top: "0",
-                  width: "100%",
-                  zIndex: 1,
+                  margin: "0 0 12px",
+                  padding: "12px 0 0",
                 }}
               >
                 {getLocation(location)}
@@ -206,8 +138,8 @@ export const Fish = () => {
               />
             </div>
           )
-        }
-      )}
+        })}
+      </div>
     </div>
   )
 }

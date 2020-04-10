@@ -1,3 +1,4 @@
+import { fishNames } from '../translations/fish';
 import {
   Location
 } from './locations';
@@ -13,335 +14,8 @@ export type FishProps = {
   availability: [boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]
 };
 
-export const fishNames: {
-  [key: string]: {
-    [locale: string]: string
-  }
-} = {
-  bitterling: {
-    en: "Bitterling",
-    zh: "Bitterling",
-  },
-  pale_chub: {
-    en: "Pale chub",
-    zh: "Pale chub",
-  },
-  crucian_carp: {
-    en: "Crucian carp",
-    zh: "Crucian carp",
-  },
-  dace: {
-    en: "Dace",
-    zh: "Dace",
-  },
-  carp: {
-    en: "Carp",
-    zh: "Carp",
-  },
-  koi: {
-    en: "Koi",
-    zh: "Koi",
-  },
-  goldfish: {
-    en: "Goldfish",
-    zh: "Goldfish",
-  },
-  pop_eyed_goldfish: {
-    en: "Pop-eyed goldfish",
-    zh: "Pop-eyed goldfish",
-  },
-  ranchu_goldfish: {
-    en: "Ranchu goldfish",
-    zh: "Ranchu goldfish",
-  },
-  killifish: {
-    en: "Killifish",
-    zh: "Killifish",
-  },
-  crawfish: {
-    en: "Crawfish",
-    zh: "Crawfish",
-  },
-  soft_shelled_turtle: {
-    en: "Soft-shelled turtle",
-    zh: "Soft-shelled turtle",
-  },
-  snapping_turtle: {
-    en: "Snapping turtle",
-    zh: "Snapping turtle",
-  },
-  tadpole: {
-    en: "Tadpole",
-    zh: "Tadpole",
-  },
-  frog: {
-    en: "Frog",
-    zh: "Frog",
-  },
-  freshwater_goby: {
-    en: "Freshwater goby",
-    zh: "Freshwater goby",
-  },
-  loach: {
-    en: "Loach",
-    zh: "Loach",
-  },
-  catfish: {
-    en: "Catfish",
-    zh: "Catfish",
-  },
-  giant_snakehead: {
-    en: "Giant snakehead",
-    zh: "Giant snakehead",
-  },
-  bluegill: {
-    en: "Bluegill",
-    zh: "Bluegill",
-  },
-  yellow_perch: {
-    en: "Yellow perch",
-    zh: "Yellow perch",
-  },
-  black_bass: {
-    en: "Black bass",
-    zh: "Black bass",
-  },
-  tilapia: {
-    en: "Tilapia",
-    zh: "Tilapia",
-  },
-  pike: {
-    en: "Pike",
-    zh: "Pike",
-  },
-  pond_smelt: {
-    en: "Pond smelt",
-    zh: "Pond smelt",
-  },
-  sweetfish: {
-    en: "Sweetfish",
-    zh: "Sweetfish",
-  },
-  cherry_salmon: {
-    en: "Cherry salmon",
-    zh: "Cherry salmon",
-  },
-  char: {
-    en: "Char",
-    zh: "Char",
-  },
-  golden_trout: {
-    en: "Golden trout",
-    zh: "Golden trout",
-  },
-  stringfish: {
-    en: "Stringfish",
-    zh: "Stringfish",
-  },
-  salmon: {
-    en: "Salmon",
-    zh: "Salmon",
-  },
-  king_salmon: {
-    en: "King salmon",
-    zh: "King salmon",
-  },
-  mitten_crab: {
-    en: "Mitten crab",
-    zh: "Mitten crab",
-  },
-  guppy: {
-    en: "Guppy",
-    zh: "Guppy",
-  },
-  nibble_fish: {
-    en: "Nibble fish",
-    zh: "Nibble fish",
-  },
-  angelfish: {
-    en: "Angelfish",
-    zh: "Angelfish",
-  },
-  betta: {
-    en: "Betta",
-    zh: "Betta",
-  },
-  neon_tetra: {
-    en: "Neon tetra",
-    zh: "Neon tetra",
-  },
-  rainbowfish: {
-    en: "Rainbowfish",
-    zh: "Rainbowfish",
-  },
-  piranha: {
-    en: "Piranha",
-    zh: "Piranha",
-  },
-  arowana: {
-    en: "Arowana",
-    zh: "Arowana",
-  },
-  dorado: {
-    en: "Dorado",
-    zh: "Dorado",
-  },
-  gar: {
-    en: "Gar",
-    zh: "Gar",
-  },
-  arapaima: {
-    en: "Arapaima",
-    zh: "Arapaima",
-  },
-  saddled_bichir: {
-    en: "Saddled bichir",
-    zh: "Saddled bichir",
-  },
-  sturgeon: {
-    en: "Sturgeon",
-    zh: "Sturgeon",
-  },
-  sea_butterfly: {
-    en: "Sea butterfly",
-    zh: "Sea butterfly",
-  },
-  sea_horse: {
-    en: "Sea horse",
-    zh: "Sea horse",
-  },
-  clown_fish: {
-    en: "Clown fish",
-    zh: "Clown fish",
-  },
-  surgeonfish: {
-    en: "Surgeonfish",
-    zh: "Surgeonfish",
-  },
-  butterfly_fish: {
-    en: "Butterfly fish",
-    zh: "Butterfly fish",
-  },
-  napoleonfish: {
-    en: "Napoleonfish",
-    zh: "Napoleonfish",
-  },
-  zebra_turkeyfish: {
-    en: "Zebra turkeyfish",
-    zh: "Zebra turkeyfish",
-  },
-  blowfish: {
-    en: "Blowfish",
-    zh: "Blowfish",
-  },
-  puffer_fish: {
-    en: "Puffer fish",
-    zh: "Puffer fish",
-  },
-  anchovy: {
-    en: "Anchovy",
-    zh: "Anchovy",
-  },
-  horse_mackerel: {
-    en: "Horse mackerel",
-    zh: "Horse mackerel",
-  },
-  barred_knifejaw: {
-    en: "Barred knifejaw",
-    zh: "Barred knifejaw",
-  },
-  sea_bass: {
-    en: "Sea bass",
-    zh: "Sea bass",
-  },
-  red_snapper: {
-    en: "Red snapper",
-    zh: "Red snapper",
-  },
-  dab: {
-    en: "Dab",
-    zh: "Dab",
-  },
-  olive_flounder: {
-    en: "Olive flounder",
-    zh: "Olive flounder",
-  },
-  squid: {
-    en: "Squid",
-    zh: "Squid",
-  },
-  moray_eel: {
-    en: "Moray eel",
-    zh: "Moray eel",
-  },
-  ribbon_eel: {
-    en: "Ribbon eel",
-    zh: "Ribbon eel",
-  },
-  tuna: {
-    en: "Tuna",
-    zh: "Tuna",
-  },
-  blue_marlin: {
-    en: "Blue marlin",
-    zh: "Blue marlin",
-  },
-  giant_trevally: {
-    en: "Giant trevally",
-    zh: "Giant trevally",
-  },
-  mahi_mahi: {
-    en: "Mahi-mahi",
-    zh: "Mahi-mahi",
-  },
-  ocean_sunfish: {
-    en: "Ocean sunfish",
-    zh: "Ocean sunfish",
-  },
-  ray: {
-    en: "Ray",
-    zh: "Ray",
-  },
-  saw_shark: {
-    en: "Saw shark",
-    zh: "Saw shark",
-  },
-  hammerhead_shark: {
-    en: "Hammerhead shark",
-    zh: "Hammerhead shark",
-  },
-  great_white_shark: {
-    en: "Great white shark",
-    zh: "Great white shark",
-  },
-  whale_shark: {
-    en: "Whale shark",
-    zh: "Whale shark",
-  },
-  suckerfish: {
-    en: "Suckerfish",
-    zh: "Suckerfish",
-  },
-  football_fish: {
-    en: "Football fish",
-    zh: "Football fish",
-  },
-  oarfish: {
-    en: "Oarfish",
-    zh: "Oarfish",
-  },
-  barreleye: {
-    en: "Barreleye",
-    zh: "Barreleye",
-  },
-  coelacanth: {
-    en: "Coelacanth",
-    zh: "Coelacanth"
-  },
-}
-
 export const getData = (locale: string): FishProps[] => {
-  const getFishName = (key: string) => fishNames[key][locale];
+  const getFishName = (key: string) => fishNames[key][locale].length > 0 ? fishNames[key][locale] : fishNames[key]['en'];
 
   return [
     {
@@ -359,7 +33,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 200,
       location: "river",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -377,7 +51,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 240,
       location: "river",
       size: 3,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -395,7 +69,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 4000,
       location: "pond",
       size: 4,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -413,7 +87,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 1300,
       location: "pond",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -422,7 +96,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 4500,
       location: "pond",
       size: 2,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -449,7 +123,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 3750,
       location: "river",
       size: 4,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, true, true, false, false, false, false, false, false, false, false, false]
     },
     {
@@ -458,7 +132,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 5000,
       location: "river",
       size: 5,
-      time: ["21-4"],
+      time: [[21, 4]],
       availability: [true, true, true, true, false, false, false, false, false, true, true, true]
     },
     {
@@ -485,7 +159,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 400,
       location: "river",
       size: 2,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -503,7 +177,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 800,
       location: "pond",
       size: 4,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     },
     {
@@ -512,7 +186,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 5500,
       location: "pond",
       size: 5,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, false, false, false, false, false, false, false, false, false, true]
     },
     {
@@ -521,7 +195,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 180,
       location: "river",
       size: 2,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
@@ -584,7 +258,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 1000,
       location: "river_clifftop",
       size: 3,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, true, true, true, false, false, false, true, true, true, true]
     },
     {
@@ -593,7 +267,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 3800,
       location: "pond_clifftop",
       size: 3,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, true, true, true, false, false, false, true, true, true, true]
     },
     {
@@ -602,7 +276,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 15000,
       location: "river_clifftop",
       size: 3,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, true, true, true, false, false, false, true, true, true, false]
     },
     {
@@ -611,7 +285,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 15000,
       location: "river_clifftop",
       size: 5,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, false, false, false, true, true, true, true, false, false, false]
     },
     {
@@ -638,7 +312,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 2000,
       location: "river",
       size: 2,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, true, true, true, false, false, false, false, false, false, false]
     },
     {
@@ -647,7 +321,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 1300,
       location: "river",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     },
     {
@@ -656,7 +330,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 1500,
       location: "river",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, false, false, false, false, false, false, false, true, true]
     },
     {
@@ -665,7 +339,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 3000,
       location: "river",
       size: 2,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
       name: getFishName("betta"),
@@ -673,7 +347,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 2500,
       location: "river",
       size: 2,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
       name: getFishName("neon_tetra"),
@@ -681,7 +355,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 500,
       location: "river",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     }, {
       name: getFishName("rainbowfish"),
@@ -689,7 +363,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 800,
       location: "river",
       size: 1,
-      time: ["9-16"],
+      time: [[9, 16]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
       name: getFishName("piranha"),
@@ -697,7 +371,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 2500,
       location: "river",
       size: 2,
-      time: ["9-16", "21-4"],
+      time: [[9,16], [21,4]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("arowana"),
@@ -705,7 +379,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 10000,
       location: "river",
       size: 4,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("dorado"),
@@ -713,7 +387,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 15000,
       location: "river",
       size: 5,
-      time: ["4-21"],
+      time: [[4,21]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("gar"),
@@ -721,7 +395,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 6000,
       location: "pond",
       size: 6,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("arapaima"),
@@ -729,7 +403,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 10000,
       location: "river",
       size: 6,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("saddled_bichir"),
@@ -737,7 +411,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 4000,
       location: "river",
       size: 4,
-      time: ["21-4"],
+      time: [[21, 4]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("sturgeon"),
@@ -793,7 +467,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 10000,
       location: "sea",
       size: 6,
-      time: ["4-21"],
+      time: [[4,21]],
       availability: [true, true, false, false, false, false, false, false, false, false, false, false]
     }, {
       name: getFishName("zebra_turkeyfish"),
@@ -809,7 +483,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 5000,
       location: "sea",
       size: 3,
-      time: ["18-4"],
+      time: [[18,4]],
       availability: [false, false, false, false, true, true, true, true, false, false, false, false]
     }, {
       name: getFishName("puffer_fish"),
@@ -825,7 +499,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 200,
       location: "sea",
       size: 2,
-      time: ["4-21"],
+      time: [[4,21]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
       name: getFishName("horse_mackerel"),
@@ -937,7 +611,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 4000,
       location: "sea",
       size: 7,
-      time: ["4-21"],
+      time: [[4,21]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, false]
     }, {
       name: getFishName("ray"),
@@ -945,7 +619,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 3000,
       location: "sea",
       size: 5,
-      time: ["4-21"],
+      time: [[4,21]],
       availability: [false, true, true, true, true, false, false, false, false, false, false, false]
     }, {
       name: getFishName("saw_shark"),
@@ -953,7 +627,7 @@ export const getData = (locale: string): FishProps[] => {
       value: 12000,
       location: "sea",
       size: 7,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("hammerhead_shark"),
@@ -961,14 +635,14 @@ export const getData = (locale: string): FishProps[] => {
       value: 8000,
       location: "sea",
       size: 7,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("great_white_shark"),
       image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/38/NH-Icon-greatwhiteshark.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 15000,
       location: "sea",
       size: 7,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
       name: getFishName("whale_shark"),
@@ -989,7 +663,7 @@ export const getData = (locale: string): FishProps[] => {
       image: "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/NH-Icon-footballfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 2500,
       location: "sea",
       size: 4,
-      time: ["16-9"],
+      time: [[16, 9]],
       availability: [false, false, false, false, true, true, true, true, true, false, false, false]
     }, {
       name: getFishName("oarfish"),
@@ -1003,7 +677,7 @@ export const getData = (locale: string): FishProps[] => {
       image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c7/NH-Icon-barreleye.png/revision/latest/scale-to-width-down/64?cb=20200401003128", value: 15000,
       location: "sea",
       size: 2,
-      time: ["21-4"],
+      time: [[21, 4]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
       name: getFishName("coelacanth"),

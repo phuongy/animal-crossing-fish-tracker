@@ -25,24 +25,24 @@ export const FishGrid = ({
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
-        gridColumnGap: "8px",
-        gridRowGap: "8px",
+        gridColumnGap: "16px",
+        gridRowGap: "16px",
         width: "100%",
       }}
     >
       {activeFish.length > 0 ? (
         <React.Fragment>
           {activeFish.map((fish, index) => (
-            <Card key={index} {...fish} />
+            <Card key={index} {...fish} locale={locale} />
           ))}
           {showAll &&
             inActiveFish.map((fish, index) => (
-              <Card key={index} {...fish} isInactive />
+              <Card key={index} {...fish} locale={locale} isInactive />
             ))}
         </React.Fragment>
       ) : (
         inActiveFish.map((fish, index) => (
-          <Card key={index} {...fish} isInactive />
+          <Card key={index} {...fish} locale={locale} isInactive />
         ))
       )}
     </div>

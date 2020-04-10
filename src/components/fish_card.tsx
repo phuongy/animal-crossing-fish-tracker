@@ -1,6 +1,6 @@
 import * as React from "react"
 import { FishProps } from "../data/fish"
-import { getTimeActive } from "../data/timeActive"
+import { getTimeActive } from "../translations/timeActive"
 
 export const Card = ({
   locale = "en",
@@ -14,10 +14,8 @@ export const Card = ({
   return (
     <div
       style={{
-        borderColor: "#ccc",
-        borderStyle: isInactive ? "dashed" : "solid",
-        borderWidth: "1px",
-        borderRadius: "4px",
+        background: "#fff",
+        borderRadius: "16px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -37,7 +35,9 @@ export const Card = ({
         <p style={{ margin: "0 0 4px" }}>
           <strong>{name}</strong>
         </p>
-        <p style={{ margin: 0 }}>{getTime(time)}</p>
+        <p style={{ margin: 0 }}>
+          {time === "all-day" ? getTime("all-day") : getTime(time)}
+        </p>
       </div>
       <div
         style={{
