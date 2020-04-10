@@ -84,9 +84,6 @@ export const Fish = () => {
       <div
         style={{
           flex: "0 0 auto",
-          position: "sticky",
-          top: "48px",
-          zIndex: 1,
         }}
       >
         <FishFilters
