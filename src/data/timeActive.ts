@@ -13,7 +13,7 @@ export const isFishActiveNow = (fish: FishProps) => {
 
   if (Array.isArray(fish.time)) {
     return fish.time.some(
-      time => currentHour >= time[0] || currentHour < time[1]
+      time => currentHour >= time[0] && currentHour < time[1]
     )
   }
 
