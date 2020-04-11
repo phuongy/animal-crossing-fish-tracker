@@ -23,6 +23,33 @@ const yellow = "#eee080"
 const green = "#e9f5eb"
 const highlight = orange
 const text = "#6e661b"
+const gutter = "4px"
+
+const filterHeadingStyles: React.CSSProperties = {
+  fontFamily: "helvetica",
+  fontSize: "16px",
+  margin: "12px 0",
+}
+
+const buttonStyles: React.CSSProperties = {
+  background: "#fff",
+  border: "1px solid #ccc",
+  borderRadius: "8px",
+  fontSize: "16px",
+  padding: "6px 4px",
+  textAlign: "center",
+}
+
+const highlightedButtonStyles: React.CSSProperties = {
+  background: highlight,
+  borderColor: highlight,
+  color: "#fff",
+}
+
+const getButtonStyles = (highlighted: boolean) => ({
+  ...buttonStyles,
+  ...(highlighted && highlightedButtonStyles),
+})
 
 const SummaryFilter = ({
   fishFilterLabels,
@@ -50,8 +77,6 @@ const SummaryFilter = ({
     fontWeight: 600,
   }
 
-  console.log(fishFilterLabels)
-
   return (
     <div style={summaryContainerStyles}>
       {fishFilterLabels("filter")}
@@ -71,39 +96,21 @@ const LocationsFilter = ({
   currentLocation,
   getLocation,
 }: Partial<FishFiltersProps>) => {
-  const buttonStyles: React.CSSProperties = {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    flex: "0 1 16.66%",
-    fontSize: "16px",
-    padding: "6px 4px",
-    textAlign: "center",
-  }
-
   return (
     <div>
-      <h2
-        style={{
-          fontFamily: "helvetica",
-          fontSize: "16px",
-          margin: "12px 0",
-        }}
-      >
-        {fishFilterLabels("location")}
-      </h2>
+      <h2 style={filterHeadingStyles}>{fishFilterLabels("location")}</h2>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr 1fr",
-          gridColumnGap: "4px",
-          gridRowGap: "4px",
+          gridColumnGap: gutter,
+          gridRowGap: gutter,
         }}
       >
         <button
           style={{
-            ...buttonStyles,
-            background: currentLocation === "all" ? highlight : "#fff",
-            color: currentLocation === "all" ? "#fff" : "#000",
+            ...getButtonStyles(currentLocation === "all"),
+            flex: "0 1 16.66%",
           }}
           onClick={onLocationChange("all")}
         >
@@ -113,9 +120,8 @@ const LocationsFilter = ({
           <button
             key={index}
             style={{
-              ...buttonStyles,
-              background: currentLocation === location ? highlight : "#fff",
-              color: currentLocation === location ? "#fff" : "#000",
+              ...getButtonStyles(currentLocation === location),
+              flex: "0 1 16.66%",
             }}
             onClick={onLocationChange(location)}
           >
@@ -133,41 +139,22 @@ const MonthFilter = ({
   currentMonth,
   onMonthChange,
 }: Partial<FishFiltersProps>) => {
-  const buttonStyles: React.CSSProperties = {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    flex: "0 1 16.66%",
-    fontSize: "16px",
-    padding: "6px 4px",
-    textAlign: "center",
-  }
-
   return (
     <div>
-      <h2
-        style={{
-          fontFamily: "helvetica",
-          fontSize: "16px",
-          margin: "12px 0",
-        }}
-      >
-        {fishFilterLabels("month")}
-      </h2>
+      <h2 style={filterHeadingStyles}>{fishFilterLabels("month")}</h2>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
-          gridColumnGap: "4px",
-          gridRowGap: "4px",
+          gridTemplateColumns: "repeat(6, 1fr)",
+          gridColumnGap: gutter,
+          gridRowGap: gutter,
         }}
       >
         {monthsShortName.map((month, index) => (
           <button
             key={index}
             style={{
-              ...buttonStyles,
-              background: currentMonth === index ? highlight : "#fff",
-              color: currentMonth === index ? "#fff" : "#000",
+              ...getButtonStyles(currentMonth === index),
               flex: "0 1 16.66%",
             }}
             onClick={onMonthChange(index)}
@@ -185,31 +172,13 @@ const ShowAllFilter = ({
   showAll,
   onShowAllChange,
 }: Partial<FishFiltersProps>) => {
-  const buttonStyles: React.CSSProperties = {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    flex: "0 1 16.66%",
-    fontSize: "16px",
-    marginRight: "4px",
-    padding: "6px 18px",
-    textAlign: "center",
-  }
   return (
     <div>
-      <h2
-        style={{
-          fontFamily: "helvetica",
-          fontSize: "16px",
-          margin: "12px 0",
-        }}
-      >
-        {fishFilterLabels("showAll")}
-      </h2>
+      <h2 style={filterHeadingStyles}>{fishFilterLabels("showAll")}</h2>
       <button
         style={{
-          ...buttonStyles,
-          background: showAll === true ? highlight : "#fff",
-          color: showAll === true ? "#fff" : "#000",
+          ...getButtonStyles(showAll === true),
+          width: "60px",
         }}
         onClick={onShowAllChange(true)}
       >
@@ -217,9 +186,9 @@ const ShowAllFilter = ({
       </button>
       <button
         style={{
-          ...buttonStyles,
-          background: showAll === false ? highlight : "#fff",
-          color: showAll === false ? "#fff" : "#000",
+          ...getButtonStyles(showAll === false),
+          marginLeft: gutter,
+          width: "60px",
         }}
         onClick={onShowAllChange(false)}
       >
