@@ -6,12 +6,20 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-i18n",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        langKeyDefault: "en",
-        useLangKeyLayout: false,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    `gatsby-transformer-json`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {

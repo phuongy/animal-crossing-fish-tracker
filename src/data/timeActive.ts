@@ -1,7 +1,4 @@
-import { FishProps } from "./fish"
-
-export type TimeRange = [number, number]
-export type TimeActive = "all-day" | TimeRange[]
+import { FishProps } from "../types"
 
 export const isFishActiveNow = (fish: FishProps) => {
   const currentTime = new Date()

@@ -457,7 +457,7 @@ export const fishNames: TranslationObject = {
     ru: "",
     zh: "",
   },
-  rainbowfish: {
+  rainbow_fish: {
     en: "Rainbowfish",
     de: "",
     es: "",

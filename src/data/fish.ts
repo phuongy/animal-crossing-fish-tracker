@@ -5,7 +5,7 @@ import {
 import { TimeActive } from './timeActive';
 
 export type FishProps = {
-  name: string;
+  slug: string;
   image: string;
   value: number;
   location: Location;
@@ -15,12 +15,10 @@ export type FishProps = {
 };
 
 export const getData = (locale: string): FishProps[] => {
-  const getFishName = (key: string) => fishNames[key][locale].length > 0 ? fishNames[key][locale] : fishNames[key]['en'];
-
   return [
     {
-      name: getFishName("bitterling"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ea/NH-Icon-bitterling.png/revision/latest/scale-to-width-down/64?cb=20200401003128",
+      slug: "bitterling",
+      image: 'bitterling.png',
       value: 900,
       location: "river",
       size: 1,
@@ -28,8 +26,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, false, false, true, true, true, true, true, false, false, false]
     },
     {
-      name: getFishName("pale_chub"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-palechub.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "pale_chub",
+      image: 'pale_chub.png',
       value: 200,
       location: "river",
       size: 1,
@@ -37,8 +35,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("crucian_carp"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/0/03/NH-Icon-cruciancarp.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "crucian_carp",
+      image: 'crucian_carp.png',
       value: 160,
       location: "river",
       size: 2,
@@ -46,8 +44,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("dace"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-dace.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "dace",
+      image: 'dace.png',
       value: 240,
       location: "river",
       size: 3,
@@ -55,8 +53,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("carp"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-carp.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "carp",
+      image: 'carp.png',
       value: 300,
       location: "pond",
       size: 4,
@@ -64,8 +62,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("koi"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/74/NH-Icon-koi.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "koi",
+      image: 'koi.png',
       value: 4000,
       location: "pond",
       size: 4,
@@ -73,8 +71,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("goldfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ed/NH-Icon-goldfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "goldfish",
+      image: 'goldfish.png',
       value: 1300,
       location: "pond",
       size: 1,
@@ -82,8 +80,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("pop_eyed_goldfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c9/NH-Icon-popeyedgoldfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "pop_eyed_goldfish",
+      image: 'pop_eyed_goldfish.png',
       value: 1300,
       location: "pond",
       size: 1,
@@ -91,8 +89,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("ranchu_goldfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-ranchugoldfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "ranchu_goldfish",
+      image: 'ranchu_goldfish.png',
       value: 4500,
       location: "pond",
       size: 2,
@@ -100,8 +98,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("killifish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-killifish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "killifish",
+      image: 'killifish.png',
       value: 300,
       location: "pond",
       size: 1,
@@ -109,8 +107,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, false, false, false, false, false, false, false, true, true, true]
     },
     {
-      name: getFishName("crawfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/cd/NH-Icon-crawfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "crawfish",
+      image: 'crawfish.png',
       value: 200,
       location: "pond",
       size: 2,
@@ -118,8 +116,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, false, false, false, false, false, false, true, true, true]
     },
     {
-      name: getFishName("soft_shelled_turtle"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-softshelledturtle.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "soft_shelled_turtle",
+      image: 'soft_shelled_turtle.png',
       value: 3750,
       location: "river",
       size: 4,
@@ -127,8 +125,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, true, true, false, false, false, false, false, false, false, false, false]
     },
     {
-      name: getFishName("snapping_turtle"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-snappingturtle.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "snapping_turtle",
+      image: 'snapping_turtle.png',
       value: 5000,
       location: "river",
       size: 5,
@@ -136,8 +134,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, false, false, false, false, false, true, true, true]
     },
     {
-      name: getFishName("tadpole"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-tadpole.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "tadpole",
+      image: 'tadpole.png',
       value: 100,
       location: "pond",
       size: 1,
@@ -145,8 +143,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, false, false, false, false, false, false, false, true, true, true, true]
     },
     {
-      name: getFishName("frog"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6b/NH-Icon-frog.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "frog",
+      image: 'frog.png',
       value: 120,
       location: "pond",
       size: 2,
@@ -154,8 +152,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, false, false, false, false, false, false, false, false, true, true]
     },
     {
-      name: getFishName("freshwater_goby"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ee/NH-Icon-freshwatergoby.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "freshwater_goby",
+      image: 'freshwater_goby.png',
       value: 400,
       location: "river",
       size: 2,
@@ -163,8 +161,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("loach"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/77/NH-Icon-loach.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "loach",
+      image: 'loach.png',
       value: 400,
       location: "river",
       size: 2,
@@ -172,8 +170,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, false, false, false, false, false, false, true, true, true, false]
     },
     {
-      name: getFishName("catfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/29/NH-Icon-catfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "catfish",
+      image: 'catfish.png',
       value: 800,
       location: "pond",
       size: 4,
@@ -181,8 +179,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     },
     {
-      name: getFishName("giant_snakehead"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/0/0c/NH-Icon-giantsnakehead.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "giant_snakehead",
+      image: 'giant_snakehead.png',
       value: 5500,
       location: "pond",
       size: 5,
@@ -190,8 +188,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, false, false, false, false, false, false, false, false, false, true]
     },
     {
-      name: getFishName("bluegill"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/69/NH-Icon-bluegill.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "bluegill",
+      image: 'bluegill.png',
       value: 180,
       location: "river",
       size: 2,
@@ -199,8 +197,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("yellow_perch"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1d/NH-Icon-yellowperch.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "yellow_perch",
+      image: 'yellow_perch.png',
       value: 300,
       location: "river",
       size: 3,
@@ -208,8 +206,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, false, true, true, true, true, true, true, false, false, false]
     },
     {
-      name: getFishName("black_bass"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e2/NH-Icon-blackbass.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "black_bass",
+      image: 'black_bass.png',
       value: 400,
       location: "river",
       size: 4,
@@ -217,8 +215,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     },
     {
-      name: getFishName("tilapia"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/53/NH-Icon-tilapia.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "tilapia",
+      image: 'tilapia.png',
       value: 800,
       location: "river",
       size: 3,
@@ -226,8 +224,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, false, false, false, false, false, false, false, true]
     },
     {
-      name: getFishName("pike"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dc/NH-Icon-pike.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "pike",
+      image: 'pike.png',
       value: 1800,
       location: "river",
       size: 5,
@@ -235,8 +233,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, true, true, true, false, false, false, false, false, false]
     },
     {
-      name: getFishName("pond_smelt"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/4/41/NH-Icon-pondsmelt.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "pond_smelt",
+      image: 'pond_smelt.png',
       value: 500,
       location: "river",
       size: 2,
@@ -244,8 +242,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, false, false, false, true, true, true, false, false, false, false]
     },
     {
-      name: getFishName("sweetfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/4/40/NH-Icon-sweetfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "sweetfish",
+      image: 'sweetfish.png',
       value: 900,
       location: "river",
       size: 3,
@@ -253,8 +251,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, false, false, false, false, false, false, false, false, false]
     },
     {
-      name: getFishName("cherry_salmon"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5f/NH-Icon-cherrysalmon.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "cherry_salmon",
+      image: 'cherry_salmon.png',
       value: 1000,
       location: "river_clifftop",
       size: 3,
@@ -262,8 +260,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, true, true, false, false, false, true, true, true, true]
     },
     {
-      name: getFishName("char"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/15/NH-Icon-char.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "char",
+      image: 'char.png',
       value: 3800,
       location: "pond_clifftop",
       size: 3,
@@ -271,8 +269,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, true, true, false, false, false, true, true, true, true]
     },
     {
-      name: getFishName("golden_trout"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5c/NH-Icon-goldentrout.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "golden_trout",
+      image: 'golden_trout.png',
       value: 15000,
       location: "river_clifftop",
       size: 3,
@@ -280,8 +278,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, true, true, false, false, false, true, true, true, false]
     },
     {
-      name: getFishName("stringfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-stringfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "stringfish",
+      image: 'stringfish.png',
       value: 15000,
       location: "river_clifftop",
       size: 5,
@@ -289,8 +287,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, false, false, false, true, true, true, true, false, false, false]
     },
     {
-      name: getFishName("salmon"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fb/NH-Icon-salmon.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "salmon",
+      image: 'salmon.png',
       value: 700,
       location: "river_mouth",
       size: 4,
@@ -298,8 +296,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, false, false, false, false, false, false, false, false, false]
     },
     {
-      name: getFishName("king_salmon"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fd/NH-Icon-kingsalmon.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "king_salmon",
+      image: 'king_salmon.png',
       value: 1800,
       location: "river_mouth",
       size: 6,
@@ -307,8 +305,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, false, false, false, false, false, false, false, false, false]
     },
     {
-      name: getFishName("mitten_crab"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e3/NH-Icon-mittencrab.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "mitten_crab",
+      image: 'mitten_crab.png',
       value: 2000,
       location: "river",
       size: 2,
@@ -316,8 +314,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [false, false, true, true, true, false, false, false, false, false, false, false]
     },
     {
-      name: getFishName("guppy"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-guppy.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "guppy",
+      image: 'guppy.png',
       value: 1300,
       location: "river",
       size: 1,
@@ -325,8 +323,8 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     },
     {
-      name: getFishName("nibble_fish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/8/89/NH-Icon-nibblefish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "nibble_fish",
+      image: 'nibble_fish.png',
       value: 1500,
       location: "river",
       size: 1,
@@ -334,354 +332,361 @@ export const getData = (locale: string): FishProps[] => {
       availability: [true, true, true, false, false, false, false, false, false, false, true, true]
     },
     {
-      name: getFishName("angelfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-angelfish.png/revision/latest/scale-to-width-down/64?cb=20200401003128",
+      slug: "angelfish",
+      image: 'angelfish.png',
       value: 3000,
       location: "river",
       size: 2,
       time: [[16, 9]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
-      name: getFishName("betta"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7c/NH-Icon-betta.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "betta",
+      image: 'betta.png',
       value: 2500,
       location: "river",
       size: 2,
       time: [[9, 16]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
-      name: getFishName("neon_tetra"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/da/NH-Icon-neontetra.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "neon_tetra",
+      image: 'neon_tetra.png',
       value: 500,
       location: "river",
       size: 1,
       time: [[9, 16]],
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("rainbowfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/68/NH-Icon-rainbowfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "rainbowfish",
+      image: 'rainbowfish.png',
       value: 800,
       location: "river",
       size: 1,
       time: [[9, 16]],
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
-      name: getFishName("piranha"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-piranha.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "piranha",
+      image: 'piranha.png',
       value: 2500,
       location: "river",
       size: 2,
       time: [[9,16], [21,4]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("arowana"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/b/bf/NH-Icon-arowana.png/revision/latest/scale-to-width-down/64?cb=20200401003128",
+      slug: "arowana",
+      image: 'arowana.png',
       value: 10000,
       location: "river",
       size: 4,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("dorado"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/df/NH-Icon-dorado.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "dorado",
+      image: 'dorado.png',
       value: 15000,
       location: "river",
       size: 5,
       time: [[4,21]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("gar"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9f/NH-Icon-gar.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "gar",
+      image: 'gar.png',
       value: 6000,
       location: "pond",
       size: 6,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("arapaima"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7f/NH-Icon-arapaima.png/revision/latest/scale-to-width-down/64?cb=20200401003128",
+      slug: "arapaima",
+      image: 'arapaima.png',
       value: 10000,
       location: "river",
       size: 6,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("saddled_bichir"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a0/NH-Icon-saddledbichir.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "saddled_bichir",
+      image: 'saddled_bichir.png',
       value: 4000,
       location: "river",
       size: 4,
       time: [[21, 4]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("sturgeon"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/9/98/NH-Icon-sturgeon.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "sturgeon",
+      image: 'sturgeon.png',
       value: 10000,
       location: "river_mouth",
       size: 6,
       time: "all-day",
       availability: [false, false, true, true, true, true, true, true, true, false, false, false]
     }, {
-      name: getFishName("sea_butterfly"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8f/NH-Icon-seabutterfly.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "sea_butterfly",
+      image: 'sea_butterfly.png',
       value: 1000,
       location: "sea",
       size: 1,
       time: "all-day",
       availability: [false, false, false, false, false, true, true, true, true, false, false, false]
     }, {
-      name: getFishName("sea_horse"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/55/NH-Icon-seahorse.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "sea_horse",
+      image: 'sea_horse.png',
       value: 1100,
       location: "sea",
       size: 1,
       time: "all-day",
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("clown_fish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-clownfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "clown_fish",
+      image: 'clown_fish.png',
       value: 650,
       location: "sea",
       size: 1,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("surgeonfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/11/NH-Icon-surgeonfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "surgeonfish",
+      image: 'surgeonfish.png',
       value: 1000,
       location: "sea",
       size: 2,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("butterfly_fish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8e/NH-Icon-butterflyfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "butterfly_fish",
+      image: 'butterfly_fish.png',
       value: 1000,
       location: "sea",
       size: 2,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("napoleonfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6f/NH-Icon-napoleonfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "napoleonfish",
+      image: 'napoleonfish.png',
       value: 10000,
       location: "sea",
       size: 6,
       time: [[4,21]],
       availability: [true, true, false, false, false, false, false, false, false, false, false, false]
     }, {
-      name: getFishName("zebra_turkeyfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-zebraturkeyfish.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "zebra_turkeyfish",
+      image: 'zebra_turkeyfish.png',
       value: 500,
       location: "sea",
       size: 3,
       time: "all-day",
       availability: [true, true, true, true, true, false, false, false, false, true, true, true]
     }, {
-      name: getFishName("blowfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/39/NH-Icon-blowfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "blowfish",
+      image: 'blowfish.png',
       value: 5000,
       location: "sea",
       size: 3,
       time: [[18,4]],
       availability: [false, false, false, false, true, true, true, true, false, false, false, false]
     }, {
-      name: getFishName("puffer_fish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1f/NH-Icon-pufferfish.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "puffer_fish",
+      image: 'puffer_fish.png',
       value: 250,
       location: "sea",
       size: 3,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, false, false, false]
     }, {
-      name: getFishName("anchovy"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-anchovy.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "anchovy",
+      image: 'anchovy.png',
       value: 200,
       location: "sea",
       size: 2,
       time: [[4,21]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("horse_mackerel"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/d5/NH-Icon-horsemackerel.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "horse_mackerel",
+      image: 'horse_mackerel.png',
       value: 150,
       location: "sea",
       size: 2,
       time: "all-day",
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("barred_knifejaw"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8c/NH-Icon-barredknifejaw.png/revision/latest/scale-to-width-down/64?cb=20200401003128",
+      slug: "barred_knifejaw",
+      image: 'barred_knifejaw.png',
       value: 5000,
       location: "sea",
       size: 3,
       time: "all-day",
       availability: [true, true, true, true, true, false, false, false, true, true, true, true]
     }, {
-      name: getFishName("sea_bass"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-seabass.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "sea_bass",
+      image: 'sea_bass.png',
       value: 400,
       location: "sea",
       size: 5,
       time: "all-day",
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("red_snapper"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dd/NH-Icon-redsnapper.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "red_snapper",
+      image: 'red_snapper.png',
       value: 3000,
       location: "sea",
       size: 4,
       time: "all-day",
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("dab"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c6/NH-Icon-dab.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "dab",
+      image: 'dab.png',
       value: 300,
       location: "sea",
       size: 3,
       time: "all-day",
       availability: [false, false, false, true, true, true, true, true, true, true, false, false]
     }, {
-      name: getFishName("olive_flounder"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9e/NH-Icon-oliveflounder.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "olive_flounder",
+      image: 'olive_flounder.png',
       value: 800,
       location: "sea",
       size: 5,
       time: "all-day",
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("squid"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/NH-Icon-squid.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "squid",
+      image: 'squid.png',
       value: 500,
       location: "sea",
       size: 3,
       time: "all-day",
       availability: [true, true, false, false, false, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("moray_eel"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e5/NH-Icon-morayeel.png/revision/latest/scale-to-width-down/64?cb=20200401003130",
+      slug: "moray_eel",
+      image: 'moray_eel.png',
       value: 2000,
       location: "sea",
       size: 8,
       time: "all-day",
       availability: [false, true, true, true, false, false, false, false, false, false, false, false]
     }, {
-      name: getFishName("ribbon_eel"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/a/ac/NH-Icon-ribboneel.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "ribbon_eel",
+      image: 'ribbon_eel.png',
       value: 600,
       location: "sea",
       size: 8,
       time: "all-day",
       availability: [true, true, true, true, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("tuna"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/50/NH-Icon-tuna.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "tuna",
+      image: 'tuna.png',
       value: 7000,
       location: "pier",
       size: 6,
       time: "all-day",
       availability: [false, false, false, false, true, true, true, true, true, true, false, false]
     }, {
-      name: getFishName("blue_marlin"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-bluemarlin.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "blue_marlin",
+      image: 'blue_marlin.png',
       value: 10000,
       location: "pier",
       size: 6,
       time: "all-day",
       availability: [true, true, true, false, true, true, true, true, true, true, false, false]
     }, {
-      name: getFishName("giant_trevally"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-gianttrevally.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "giant_trevally",
+      image: 'giant_trevally.png',
       value: 4500,
       location: "pier",
       size: 5,
       time: "all-day",
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
-      name: getFishName("mahi_mahi"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/8/82/NH-Icon-mahimahi.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "mahi_mahi",
+      image: 'mahi_mahi.png',
       value: 6000,
       location: "pier",
       size: 5,
       time: "all-day",
       availability: [true, true, true, true, false, false, false, false, false, false, true, true]
     }, {
-      name: getFishName("ocean_sunfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/5/52/NH-Icon-oceansunfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "ocean_sunfish",
+      image: 'ocean_sunfish.png',
       value: 4000,
       location: "sea",
       size: 7,
       time: [[4,21]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, false]
     }, {
-      name: getFishName("ray"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/d/db/NH-Icon-ray.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "ray",
+      image: 'ray.png',
       value: 3000,
       location: "sea",
       size: 5,
       time: [[4,21]],
       availability: [false, true, true, true, true, false, false, false, false, false, false, false]
     }, {
-      name: getFishName("saw_shark"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/73/NH-Icon-sawshark.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "saw_shark",
+      image: 'saw_shark.png',
       value: 12000,
       location: "sea",
       size: 7,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("hammerhead_shark"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/25/NH-Icon-hammerheadshark.png/revision/latest/scale-to-width-down/64?cb=20200401003129",
+      slug: "hammerhead_shark",
+      image: 'hammerhead_shark.png',
       value: 8000,
       location: "sea",
       size: 7,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("great_white_shark"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/38/NH-Icon-greatwhiteshark.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 15000,
+      slug: "great_white_shark",
+      image: 'great_white_shark.png',
+      
       location: "sea",
       size: 7,
       time: [[16, 9]],
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("whale_shark"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-whaleshark.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 13000,
+      slug: "whale_shark",
+      image: 'whale_shark.png',
+      
       location: "sea",
       size: 7,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("suckerfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-suckerfish.png/revision/latest/scale-to-width-down/64?cb=20200401003131", value: 1500,
+      slug: "suckerfish",
+      image: 'suckerfish.png',
+      
       location: "sea",
       size: 9,
       time: "all-day",
       availability: [true, true, true, false, false, false, false, false, false, false, false, true]
     }, {
-      name: getFishName("football_fish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/NH-Icon-footballfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 2500,
+      slug: "football_fish",
+      image: 'football_fish.png',
+      
       location: "sea",
       size: 4,
       time: [[16, 9]],
       availability: [false, false, false, false, true, true, true, true, true, false, false, false]
     }, {
-      name: getFishName("oarfish"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/33/NH-Icon-oarfish.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 9000,
+      slug: "oarfish",
+      image: 'oarfish.png',
+      
       location: "sea",
       size: 6,
       time: "all-day",
       availability: [false, false, false, false, false, true, true, true, true, true, true, false]
     }, {
-      name: getFishName("barreleye"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c7/NH-Icon-barreleye.png/revision/latest/scale-to-width-down/64?cb=20200401003128", value: 15000,
+      slug: "barreleye",
+      image: 'barreleye.png',
+      
       location: "sea",
       size: 2,
       time: [[21, 4]],
       availability: [true, true, true, true, true, true, true, true, true, true, true, true]
     }, {
-      name: getFishName("coelacanth"),
-      image: "https://vignette.wikia.nocookie.net/animalcrossing/images/3/31/NH-Icon-coelacanth.png/revision/latest/scale-to-width-down/64?cb=20200401003129", value: 15000,
+      slug: "coelacanth",
+      image: 'coelacanth.png',
+      
       location: "sea",
       size: 6,
       time: "all-day",
