@@ -19,6 +19,7 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-json`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
